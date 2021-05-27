@@ -47,6 +47,9 @@
     &.column-reverse {
         flex-direction: column-reverse;
     }
+    &.align-flex-end{
+        justify-content: flex-end;
+    }
 }
 
 // List helpers

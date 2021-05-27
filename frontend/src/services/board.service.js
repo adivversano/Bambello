@@ -10,7 +10,7 @@ export const boardService = {
     save,
 }
 
-async function query(boardId) {
+async function query() {
     try {
         // return await httpService.get('board', filterBy)
         return await storageService.query('board')

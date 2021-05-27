@@ -23,7 +23,7 @@ function query(entityType, boardId, delay = 1200) {
 
 function get(entityType, entityId) {
     return query(entityType)
-        // .then(entities => entities.find(entity => entity._id === entityId))
+        .then(entities => entities.find(entity => entity._id === entityId))
 }
 
 function post(entityType, newEntity) {

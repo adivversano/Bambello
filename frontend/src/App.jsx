@@ -6,7 +6,7 @@ import { routes } from './routes'
 export class App extends Component {
   render() {
     return (
-      <div className="main-container">
+      <div>
         <header>
 
         </header>

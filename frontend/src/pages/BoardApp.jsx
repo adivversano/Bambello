@@ -1,27 +1,19 @@
 import { Component } from "react";
-// import { connect } from 'react-redux'
-import { boardService } from '../services/board.service'
+import { connect } from 'react-redux'
+import { loadBoard } from '../store/actions/board.actions'
 
-export class BoardApp extends Component {
+ class _BoardApp extends Component {
 
     state = {
         board: null
     }
 
     componentDidMount() {
-        this.loadBoard();
-    }
-
-    loadBoard = async () => {
-        const board = await boardService.query();
-        console.log(board)
-        this.setState({ board })
+        this.props.loadBoard();
     }
 
     render() {
-        const { board } = this.state;
-        if (!board) return ''
-
+        const { board } = this.props
         return (
             <section className="toy-app full container">
                 <h1>HELLO</h1>
@@ -31,12 +23,14 @@ export class BoardApp extends Component {
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//     }
-// }
+function mapStateToProps(state) {
+    return {
+        board: state.boardModule.board
+    }
+}
 
-// const mapDispatchToProps = {
-// }
+const mapDispatchToProps = {
+    loadBoard
+}
 
-// export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp)
+export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp)
