@@ -10,7 +10,13 @@ body, button, html, input, select, textarea{
     font-weight: 400;
 }
 
-h2{
+h1,h2,h3,h4,h5,h6{
     font-weight: unset;
-    margin: unset;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
 }

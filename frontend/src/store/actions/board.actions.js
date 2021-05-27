@@ -1,44 +1,29 @@
-import { toyService } from '../../services/toy.service.js'
+import { boardService } from '../../services/board.service.js'
 
-export function loadToys(filterBy = {
-    keyword: '',
-    ctg: '',
-    type: '',
-    sortBy: ''
-}) {
+export function loadBoard() {
     return async dispatch => {
         try {
-            const toys = await toyService.query(filterBy)
-            dispatch({ type: 'SET_TOYS', toys })
-
+            const board = await boardService.query()
+            dispatch({ type: 'SET_BOARD', board })
         } catch (err) {
-            console.log('ToysActions: err in loadToys', err)
+            console.log('BoardActions: err in loadBoard', err)
         }
     }
 }
 
-export function onSaveToy(toy) {
-    return async dispatch => {
-        try {
-            const savedToy = await toyService.save(toy)
-            console.log('TOY IN ACTION',savedToy)
-            dispatch({ type: toy._id ? 'UPDATE_TOY' : 'ADD_TOY', toy: savedToy })
-        } catch (err) {
-            console.log(`ToysActions: err in ${toy._id ? 'update toy' : 'add toy'}${err}`)
-        }
-    }
-}
 
-export function onRemoveToy(toyId) {
-    return async dispatch => {
-        try {
-            await toyService.remove(toyId)
-            dispatch({ type: 'REMOVE_TOY', toyId })
-        } catch (err) {
-            console.log('ToysActions: err in removeToy', err)
-        }
-    }
-}
+// export function onSaveBoard(boardId) {
+//     return async dispatch => {
+//         try {
+//             const board = await boardService.getById(boardId)
+//             dispatch({ type: 'SAVE_BOARD', board })
+//         } catch (err) {
+//             console.log('ToysActions: err in removeToy', err)
+//         }
+//     }
+// }
+// ​
+
 
 
 

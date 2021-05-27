@@ -13,6 +13,16 @@
             "id": "l101",
             "title": "Done",
             "color": "#61bd4f"
+        },
+        {
+            "id": "l102",
+            "title": "Stuck",
+            "color": "#eb5a46"
+        },
+        {
+            "id": "l103",
+            "title": "In Progress",
+            "color": "#ff9e1a"
         }
     ],
     "members": [
@@ -64,7 +74,7 @@
                             "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
                         }
                     ],
-                    "labelIds": ["101"],
+                    "labelIds": ["l101", "l102"],
                     "createdAt": 1590999730348,
                     "startDate": 1590999730348,
                     "dueDate": 16156215211,
@@ -190,7 +200,7 @@
                             "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
                         }
                     ],
-                    "labelIds": ["101"],
+                    "labelIds": ["l101","l102"],
                     "createdAt": 1590999730348,
                     "startDate": 1590999730348,
                     "dueDate": 16156215211,

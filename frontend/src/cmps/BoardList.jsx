@@ -10,7 +10,7 @@ export function BoardList({ list }) {
                 <div className="board-list-header">
                     <h2>{list.title}</h2>
                     <div className="board-list-btn-menu">
-                        <i class="fas fa-ellipsis-h"></i>
+                        <i className="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
                 <div className="board-list-cards">
