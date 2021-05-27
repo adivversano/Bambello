@@ -1,6 +1,8 @@
 import { Component } from "react";
 // import { connect } from 'react-redux'
 import { boardService } from '../services/board.service'
+import { BoardList } from '../cmps/BoardList'
+import { BoardListAdd } from '../cmps/BoardListAdd'
 
 export class BoardApp extends Component {
 
@@ -20,12 +22,17 @@ export class BoardApp extends Component {
 
     render() {
         const { board } = this.state;
+
         if (!board) return ''
 
         return (
-            <section className="toy-app full container">
-                <h1>HELLO</h1>
-                <pre>{JSON.stringify(board, null, 2)}</pre>
+            <section className="board-app">
+
+                <div className="board-list-container">
+                    {board.lists.map(list => <BoardList key={list.id} list={list} />)}
+                </div>
+                <BoardListAdd />
+                {/* <pre>{JSON.stringify(board, null, 2)}</pre> */}
             </section>
         )
     }

@@ -6,7 +6,8 @@
 
 // Cmps
 @import "cmps/board-header.scss";
-@import "cmps/list.scss";
+@import "cmps/board-list.scss";
+@import "cmps/card.scss";
 
 // @import "components/app-header.scss";
 // @import "components/main-nav.scss";
@@ -14,7 +15,7 @@
 
 // Pages
 // @import "./pages/homepage.scss";
-@import "./pages/boardpage.scss";
+@import "./pages/board-app.scss";
 
 // Basics
 @import "./basics/helpers.scss";
